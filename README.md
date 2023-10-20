@@ -2,7 +2,7 @@
 from telegram import Update
 from telegram.ext import Updater, CallbackContext, Dispatcher, Filters, MessageHandler
 
-TOKEN = '6376650036:AAHf858D7GreG8iQAanhR-Ypqmt_aZVt1k0'
+TOKEN = ''
 
 
 class MessageHand:
