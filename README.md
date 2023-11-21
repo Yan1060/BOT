@@ -1,4 +1,4 @@
-frfrom telegram import Update, ParseMode
+from telegram import Update, ParseMode
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, Dispatcher
@@ -8,6 +8,7 @@ from telegram.ext import Filters
 
 
 from fum import register_handler
+from HW import class_handler
 
 import logging
 
@@ -35,6 +36,8 @@ def main():
     dispatcher.add_handler(inline_keyboard_handler)
     dispatcher.add_handler(callback_handler)
     dispatcher.add_handler(register_handler)
+    dispatcher.add_handler(class_handler)
+
     dispatcher.add_handler(echo_handler)
 
 
@@ -67,6 +70,7 @@ def do_start(update: Update, context: CallbackContext):
             '/start',
             '/keyboard',
             '/register',
+            '/class',
             '/inline_keyboard',
             "<B>Жирный</B>"]
     text = '\n'.join(text)
@@ -126,7 +130,6 @@ def keyboard_react(update: Update, context: CallbackContext):
     )
 
 if __name__ == "__main__":
-    main()
 
 
 if __name__ == '__main__':
